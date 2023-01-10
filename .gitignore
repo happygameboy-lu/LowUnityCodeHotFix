@@ -26,7 +26,7 @@
 /Build-Android64
 /Build-AndroidV7
 /Assets/HybridCLRBuildCache
-/Assets/HybridCLRBuildCache.mate
+/Assets/HybridCLRBuildCache.meta
 /Release-Android
 /Release-Win32
 /Build-WebGL
@@ -38,6 +38,6 @@ Build-Mac
 /Packages/com.focus-creative-games.hybridclr_unity
 /Assets/StreamingAssets
 /Assets/test
-/Assets/test.mate
+/Assets/test.meta
 /Assets/UnityPackages
-/Assets/UnityPackages.mate
+/Assets/UnityPackages.meta
