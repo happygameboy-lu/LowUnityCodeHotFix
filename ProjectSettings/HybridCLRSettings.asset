@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e189374413a3f00468e49d51d8b27a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enable: 1
+  useGlobalIl2cpp: 0
+  hybridclrRepoURL: https://gitee.com/focus-creative-games/hybridclr
+  il2cppPlusRepoURL: https://gitee.com/focus-creative-games/il2cpp_plus
+  hotUpdateAssemblyDefinitions: []
+  hotUpdateAssemblies:
+  - Assembly-CSharp
+  preserveHotUpdateAssemblies:
+  - Hotfix1
+  - Hotfix2
+  - Hotfix3
+  - Hotfix4
+  - Hotfix5
+  - Hotfix6
+  - Hotfix7
+  - Hotfix8
+  - Hotfix9
+  - Hotfix10
+  - Hotfix11
+  - Hotfix12
+  - Hotfix13
+  - Hotfix14
+  - Hotfix15
+  - Hotfix16
+  - Hotfix17
+  - Hotfix18
+  hotUpdateDllCompileOutputRootDir: HybridCLRData/HotUpdateDlls
+  externalHotUpdateAssembliyDirs: []
+  strippedAOTDllOutputRootDir: HybridCLRData/AssembliesPostIl2CppStrip
+  patchAOTAssemblies:
+  - mscorlib
+  - System
+  - System.Core
+  - UniTask
+  - UniTask.DOTween
+  - UniTask.Linq
+  - UniTask.TextMeshPro
+  collectAssetReferenceTypes: 1
+  outputLinkFile: HybridCLRData/Generated/link.xml
+  outputAOTGenericReferenceFile: HybridCLRData/Generated/AOTGenericReferences.cs
+  maxGenericReferenceIteration: 10
+  maxMethodBridgeGenericIteration: 10
