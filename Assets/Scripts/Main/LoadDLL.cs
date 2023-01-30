@@ -37,6 +37,7 @@ public class LoadDLL : MonoBehaviour
                 hotFixSetting = JsonConvert.DeserializeObject<HotfixCodeSetting>(settingStr);
                 if (hotFixSetting!=null)
                 {
+                   
                     if (hotFixSetting.enable)
                     {
 #if !UNITY_EDITOR
@@ -45,6 +46,7 @@ public class LoadDLL : MonoBehaviour
                             temPath=GetPath($"{hotFixSetting.hotUpdateAssemblies[i]}.bytes");
                             if (!temPath.Equals($"{hotFixSetting.hotUpdateAssemblies[i]}.bytes"))
                             {
+                                
                                 www=UnityWebRequest.Get(temPath);
                                 await www.SendWebRequest();
                                 if (!String.IsNullOrEmpty(www.error))
@@ -53,13 +55,12 @@ public class LoadDLL : MonoBehaviour
                                 }
                                 await UniTask.WaitUntil(() => String.IsNullOrEmpty(www.error)&&www.isDone);
                                
-                                Debug.Log($"Reflection url={www.url}");
                                 if (www.downloadHandler.data==null||www.downloadHandler.data.Length==0)
                                 {
                                     Debug.LogError("没下载到热更");
                                 }
                                 System.Reflection.Assembly.Load(www.downloadHandler.data);
-                                
+                                www.Dispose();
                             }
                         }
 #endif
@@ -92,7 +93,8 @@ public class LoadDLL : MonoBehaviour
                 if (!path.Equals($"{hotFixSetting.patchAOTAssemblies[i]}.bytes"))
                 {
                     www = UnityWebRequest.Get(path);
-                    await www.SendWebRequest();
+                    www.SendWebRequest();
+                    await UniTask.WaitUntil(() => String.IsNullOrEmpty(www.error)&&www.isDone);
                     if (!String.IsNullOrEmpty(www.error))
                     {
                         Debug.LogError($"LoadMetadata error={www.error},path={path}");
@@ -102,6 +104,7 @@ public class LoadDLL : MonoBehaviour
                         LoadImageErrorCode err = RuntimeApi.LoadMetadataForAOTAssembly(www.downloadHandler.data, mode);
                         Debug.Log($"LoadMetadataForAOTAssembly:{hotFixSetting.patchAOTAssemblies[i]}. mode:{mode} ret:{err}");
                     }
+                    www.Dispose();
                 }
             }
         }
@@ -113,13 +116,15 @@ public class LoadDLL : MonoBehaviour
     {
         string temPath = GetPath("GameEntry");
         var www=UnityWebRequestAssetBundle.GetAssetBundle(temPath);
-        await www.SendWebRequest();
+        www.SendWebRequest();
+        await UniTask.WaitUntil(() => String.IsNullOrEmpty(www.error)&&www.isDone);
         if (!String.IsNullOrEmpty(www.error))
         {
             Debug.LogError($"load GameEntry error={www.error}");
         }
         else
         {
+            Debug.Log("加载实例");
             AssetBundle abAssets=DownloadHandlerAssetBundle.GetContent(www);
             GameObject.Instantiate(abAssets.LoadAsset<GameObject>("GameEntry"));
         }

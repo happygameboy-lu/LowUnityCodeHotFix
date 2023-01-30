@@ -5,7 +5,6 @@
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
     <type fullname="System.Exception" preserve="all" />
-    <type fullname="System.Func`1" preserve="all" />
     <type fullname="System.IO.File" preserve="all" />
     <type fullname="System.IO.Path" preserve="all" />
     <type fullname="System.Object" preserve="all" />
@@ -17,17 +16,12 @@
     <type fullname="System.Security.Permissions.SecurityAction" preserve="all" />
     <type fullname="System.Security.Permissions.SecurityPermissionAttribute" preserve="all" />
     <type fullname="System.Security.UnverifiableCodeAttribute" preserve="all" />
-    <type fullname="System.Single" preserve="all" />
-    <type fullname="System.String" preserve="all" />
-    <type fullname="System.Threading.CancellationToken" preserve="all" />
     <type fullname="System.Type" preserve="all" />
     <type fullname="System.ValueType" preserve="all" />
   </assembly>
   <assembly fullname="UniTask">
     <type fullname="Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder" preserve="all" />
-    <type fullname="Cysharp.Threading.Tasks.PlayerLoopTiming" preserve="all" />
     <type fullname="Cysharp.Threading.Tasks.UniTask" preserve="all" />
-    <type fullname="Cysharp.Threading.Tasks.UniTask/Awaiter" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.Application" preserve="all" />
@@ -40,7 +34,6 @@
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.TextAsset" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
-    <type fullname="UnityEngine.Time" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.InputLegacyModule">

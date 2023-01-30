@@ -22,7 +22,7 @@ public class MenuItems
     {
         HotfixCodeSetting hotfixSetting = new HotfixCodeSetting();
         hotfixSetting.enable = HybridCLR.Editor.SettingsUtil.HybridCLRSettings.enable;
-        hotfixSetting.hotUpdateAssemblies = HybridCLR.Editor.SettingsUtil.PatchingHotUpdateAssemblyFiles.ToArray();
+        hotfixSetting.hotUpdateAssemblies = HybridCLR.Editor.SettingsUtil.HotUpdateAssemblyNamesIncludePreserved.Select(dll => dll + ".dll").ToArray();
         hotfixSetting.patchAOTAssemblies = HybridCLR.Editor.SettingsUtil.HybridCLRSettings.patchAOTAssemblies.ToList().Select(dll => dll + ".dll").ToArray();
         string jsonStr = JsonConvert.SerializeObject(hotfixSetting);
         StreamWriter sw = new StreamWriter($"{Application.streamingAssetsPath}/HotfixCodeSetting.json");

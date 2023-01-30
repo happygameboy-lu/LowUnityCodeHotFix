@@ -37,7 +37,5 @@ Build-Mac
 /HybridCLRData
 /Packages/com.focus-creative-games.hybridclr_unity
 /Assets/StreamingAssets
-/Assets/test
-/Assets/test.meta
-/Assets/UnityPackages
-/Assets/UnityPackages.meta
+/Assets/PluginDemos
+/Assets/PluginDemos.meta

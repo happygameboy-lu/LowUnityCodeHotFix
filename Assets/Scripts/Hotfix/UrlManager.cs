@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UrlManager
 {
-   public static string GetUrl(string filepath)
+   private static string assetsRootPath = "StreamingAssets";
+   public static string GetRealResourcesRootPath(string filepath)
    {
       string path = filepath;
       if (Application.platform==RuntimePlatform.WindowsEditor)

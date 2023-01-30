@@ -20,7 +20,7 @@ public class GameEntry : MonoBehaviour
         {
             logText = GameObject.Find("Text")?.GetComponent<Text>();
         }
-        logText.text = "热更完成\n家里科技馆";
-        Debug.LogError("开始程序22");
+        logText.text = "热更完成\n完成恭喜";
+        Debug.Log("热更加载完成");
     }
 }
